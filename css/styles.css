@@ -645,7 +645,8 @@ h1 {
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.example-links:hover .example-thumb::before {
+.example-links:hover .example-thumb::before,
+.example-links:focus .example-thumb::before {
   opacity: 1;
   transform: translateY(0);
 }
@@ -668,7 +669,8 @@ h1 {
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.example-links:hover .example-cover-text {
+.example-links:hover .example-cover-text,
+.example-links:focus .example-cover-text {
   opacity: 1;
 }
 
@@ -757,11 +759,11 @@ img {
 
 .footer-leftside {
   display: flex;
-  width: calc((100%-30px) / 2);
+  width: calc((100% - 30px) / 2);
 }
 
 .footer-rightside {
-  width: calc((100%-30px) / 2);
+  width: calc((100% -3 0px) / 2);
   margin-top: 12px;
   position: relative;
 }
@@ -848,7 +850,7 @@ img {
 
 .footer-social-links {
   padding-top: 12px;
-  width: calc((100%-30px) / 2);
+  width: calc((100% - 30px) / 2);
 }
 
 .sociallink-link-footer:hover,
@@ -891,6 +893,8 @@ img {
   align-items: center;
   text-align: center;
   letter-spacing: 0.06em;
+
+  cursor: pointer;
 }
 
 .button-send {
@@ -919,6 +923,9 @@ img {
   position: absolute;
   top: 50%;
   left: 50%;
+
+  padding-left: 40px;
+  padding-right: 40px;
 
   width: 528px;
   height: 581px;
@@ -984,11 +991,11 @@ img {
   display: flex;
   align-items: center;
 }
-
+/* 
 .form {
-  margin-left: 41px;
-  margin-right: 39px;
-}
+  margin-left: 40px;
+  margin-right: 40px;
+} */
 
 .modal-name-area {
   position: relative;
@@ -1003,9 +1010,23 @@ img {
 
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
+
+  outline: none;
 }
 
-.modal-form-input:focus .modal-person-img {
+/* .modal-form-input:focus + .modal-person-img {
+  fill: var(--accent-color);
+}
+
+.modal-form-input:focus + .modal-phone-img {
+  fill: var(--accent-color);
+}
+
+.modal-form-input:focus + .modal-email-img {
+  fill: var(--accent-color);
+} */
+
+.modal-form-input:focus + .modal-focus {
   fill: var(--accent-color);
 }
 
@@ -1128,6 +1149,8 @@ img {
   letter-spacing: 0.01em;
 
   color: var(--primary-text-color);
+
+  margin-bottom: 4px;
 }
 
 .label-input-checked {
@@ -1167,7 +1190,7 @@ img {
 
 /* ============================================= */
 
-.example-thumb {
+/* .example-thumb {
   position: relative;
   overflow: hidden;
 }
@@ -1210,4 +1233,4 @@ img {
 
 .example-links:hover .example-cover-text {
   opacity: 1;
-}
+} */
